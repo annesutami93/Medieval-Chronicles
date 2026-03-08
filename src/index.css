@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-display: "Cinzel", ui-serif, Georgia, serif;
+
+  --color-parchment-100: #fdf6e3;
+  --color-parchment-200: #f4ebd8;
+  --color-parchment-300: #e6d5b8;
+  --color-parchment-400: #d4b886;
+  
+  --color-ink-900: #1a1512;
+  --color-ink-800: #2c241b;
+  --color-ink-600: #4a3f35;
+
+  --color-crimson-600: #8b0000;
+  --color-crimson-700: #660000;
+  --color-crimson-800: #4d0000;
+
+  --color-gold-400: #e6c258;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #aa8c2c;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-parchment-200);
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  color: var(--color-ink-900);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+.illuminated-border {
+  border: 4px double var(--color-gold-500);
+  outline: 2px solid var(--color-ink-900);
+  outline-offset: -8px;
+  background-color: var(--color-parchment-100);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.wax-seal {
+  background: radial-gradient(circle at 30% 30%, #b30000, #660000);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.2);
+  border: 1px solid #4d0000;
+  color: var(--color-parchment-100);
+}
+
+.medieval-button {
+  background-color: var(--color-ink-900);
+  color: var(--color-parchment-100);
+  border: 2px solid var(--color-gold-500);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.medieval-button:hover:not(:disabled) {
+  background-color: var(--color-ink-800);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  color: var(--color-gold-400);
+}
+
+.medieval-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: var(--color-ink-600);
+}
